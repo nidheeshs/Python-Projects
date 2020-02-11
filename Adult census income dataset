@@ -12,3 +12,10 @@ df.isnull().sum()
 
 #Removing ?
 df=df[(df !='?').all(axis=1)]
+
+#Exploratory data analysis
+sns.catplot(x='education.num',y='income',data=df,kind='bar',height=7)
+sns.factorplot(x='marital.status',y='income',data=df,kind='bar')
+sns.countplot(x='race',data=df)
+sns.countplot(x='native.country',data=df)
+sns.factorplot(x='relationship',y='income',data=dataset,kind='bar',size=7)
