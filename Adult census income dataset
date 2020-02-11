@@ -3,3 +3,12 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+
+#import and display dataset
+df=pd.read_csv("C:/Users/nidhe/Desktop/GITHUB/Random forest/adult.csv")
+df.info()
+df.head().transpose()
+df.isnull().sum()
+
+#Removing ?
+df=df[(df !='?').all(axis=1)]
