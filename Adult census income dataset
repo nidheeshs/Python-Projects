@@ -1,4 +1,5 @@
 #import libraries
+
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -19,3 +20,25 @@ sns.factorplot(x='marital.status',y='income',data=df,kind='bar')
 sns.countplot(x='race',data=df)
 sns.countplot(x='native.country',data=df)
 sns.factorplot(x='relationship',y='income',data=dataset,kind='bar',size=7)
+
+#Encode dependent variable
+df['income']=pd.Categorical(df['income'])
+df['income']=df['income'].cat.codes
+
+#creating dummy variables
+
+df['marital.status']=df['marital.status'].map({'Married-civ-spouse':'Married', 'Divorced':'Single', 'Never-married':'Single', 'Separated':'Single', 
+'Widowed':'Single', 'Married-spouse-absent':'Married', 'Married-AF-spouse':'Married'})
+marital_num=pd.get_dummies(df['marital.status'],drop_first=True)
+
+workclass_num=pd.get_dummies(df['workclass'],drop_first=True)
+
+Sex=pd.get_dummies(df['sex'],drop_first=True)
+
+df=df.drop(['fnlwgt','relationship','occupation','native.country'],axis=1)
+y=df['income']
+X=df.drop(['education','race','income','marital.status','workclass','sex'],axis=1)
+X.head().transpose()
+X.info()
+X=pd.concat([X,marital_num,Sex,workclass_num],axis=1)
+
