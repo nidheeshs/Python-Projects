@@ -59,3 +59,21 @@ print(classification_report(y_test, predictions))
 from sklearn.metrics import confusion_matrix,accuracy_score
 confusion_matrix(y_test, predictions)
 accuracy_score(y_test,predictions)
+
+#Model using Randomforest
+
+from sklearn.ensemble import RandomForestClassifier
+rfmod=RandomForestClassifier()
+rfmod.fit(X_train, y_train)
+pred=rfmod.predict(X_test)
+
+#model validation
+from sklearn.metrics import classification_report
+print(classification_report(y_test, pred))
+
+from sklearn.metrics import confusion_matrix,accuracy_score
+confusion_matrix(y_test, pred)
+accuracy_score(y_test,pred)
+
+
+
