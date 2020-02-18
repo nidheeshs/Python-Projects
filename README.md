@@ -1,4 +1,8 @@
 Adult income census prediction using Logistic Regression
-This project is to predict the income of citizens whether it falls below 50K or above 50K
+In this project, I am working through the Income Prediction problem associated with the Adult Income Census dataset. The goal is to accurately predict whether or not someone is making more or less than $50,000 a year.
 Data Source- https://www.kaggle.com/uciml/adult-census-income
+
+Description
+
+    
 
