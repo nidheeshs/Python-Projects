@@ -28,19 +28,34 @@ Steps:
 Exploratory Data analysis
 
 Encode dependent variable , ie income to 0 and 1.
-Insights:
+#Insights:
 *People with income <50K is larger than people with income >50K.
 *Higher the value of eduction_num ,higher the probability of income greater than 50k
 *Most of the people are from USA so we can drop column 'native.country'.
 *Relationship and marital status gives us same information.
 
-After checking Corelation heat map we can find following
+#After checking Corelation heat map we can find following
 
 *Education and education_num are corelated
-*marital.status and realtionship are corelated 
+*marital.status and relationship are corelated 
 
-Hence we can drop reltionship and education
+Hence we can drop relationship and education
 
 Create dummies for workclass, marital.status, race, sex.
-Concatenate X with other dataframes like marital_num, sex, workclass_num.    
+Concatenate X with other dataframes like marital_num, sex, workclass_num.  
+#Columns remains after dropping are:
+1.Age
+2.Education_num
+3.capital gain
+4.capital loss
+5.maritalstatus_num
+6.sex
+7.workclass_num
+8.hours_per_week
+
+#Split data into train and test.
+
+#Fit Model
+
+#Validate model using classification_report/confusion matrix/accuracy score
 
