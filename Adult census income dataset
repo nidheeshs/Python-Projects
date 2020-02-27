@@ -13,6 +13,7 @@ df.isnull().sum()
 
 #Removing ?
 df=df[(df !='?').all(axis=1)]
+df.info()
 
 #Exploratory data analysis
 sns.catplot(x='education.num',y='income',data=df,kind='bar',height=7)
