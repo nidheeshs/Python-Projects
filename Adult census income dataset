@@ -35,6 +35,7 @@ marital_num=pd.get_dummies(df['marital.status'],drop_first=True)
 workclass_num=pd.get_dummies(df['workclass'],drop_first=True)
 
 Sex=pd.get_dummies(df['sex'],drop_first=True)
+sns.heatmap(df.corr())
 
 df=df.drop(['fnlwgt','relationship','occupation','native.country'],axis=1)
 y=df['income']
