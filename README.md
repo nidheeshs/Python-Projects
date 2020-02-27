@@ -59,3 +59,5 @@ Concatenate X with other dataframes like marital_num, sex, workclass_num.
 
 #Validate model using classification_report/confusion matrix/accuracy score
 
+##I got accuracy of 82.1%
+
